@@ -1,0 +1,27 @@
+:root {
+  color-scheme: dark;
+}
+body {
+  margin: 0;
+  width: 300px;
+  padding: 18px;
+  box-sizing: border-box;
+  background: #171a1f;
+  color: #eef1f4;
+  font: 14px/1.45 system-ui;
+  display: flex;
+  gap: 12px;
+}
+.mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  flex: none;
+}
+p {
+  margin: 5px 0 8px;
+  color: #c9ced5;
+}
+small {
+  color: #8f98a3;
+}

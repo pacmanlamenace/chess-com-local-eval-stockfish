@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Chess.com Local Eval (StockFish)",
+  "version": "1.0.0",
+  "description": "Private, post-game Chess.com analysis powered by a local Stockfish build.",
+  "icons": {
+    "32": "icons/icon.svg",
+    "48": "icons/icon.svg",
+    "64": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; object-src 'self'"
+  },
+  "host_permissions": ["https://www.chess.com/*"],
+  "background": { "scripts": ["background.js"] },
+  "content_scripts": [
+    {
+      "matches": ["https://www.chess.com/*"],
+      "js": ["lib/chess-lite.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Chess.com Local Eval (StockFish)",
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon.svg"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{55403ef9-a2da-4810-9112-6684d9df61eb}",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  }
+}
